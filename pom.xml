@@ -8,7 +8,7 @@
     <artifactId>selenium-pagemodel</artifactId>
     <version>2.0-SNAPSHOT</version>
     <name>${project.groupId}:${project.artifactId}</name>
-    <description></description>
+    <description>This project helps Test Engineers by abstracting out the implementation -- in this case Selenium -- from the actual set of Actions necessary to perform a single Test Scenario</description>
     <url>https://github.com/gradeawarrior/selenium-pagemodel</url>
 
     <distributionManagement>
@@ -40,19 +40,6 @@
             <version>4.3.4</version>
         </dependency>
     </dependencies>
-
-    <!--
-    <profiles>
-        <profile>
-            <id>release</id>
-            <build>
-                ...
-                javadoc, source and gpg plugin from above
-                ...
-            </build>
-        </profile>
-    </profiles>
-    -->
 
     <build>
         <plugins>
