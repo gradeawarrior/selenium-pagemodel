@@ -25,7 +25,7 @@ Using these constructs, you can describe a `WebPage` as having the following web
 	* A Submit `Button`
 	* A potential Error message `TextElement` (in the event of a login failure)
 
-Once a `PageModel` is defined, a login test may look like this:
+Once a `PageModel` is defined, a _login test_ for an imaginary website may look like this:
 
 	homePage.open();
 	loginPage.waitForPageLoad().validate();
@@ -49,7 +49,7 @@ Please add the dependency to your `pom.xml`:
 			<version>2.0</version>
 		</dependency>
 		
-_*NOTE:* Please take a look at the `RELEASE_NOTES.md` for the latest version available at this time_
+_*NOTE:* Please take a look at the [RELEASE_NOTES.md](https://github.com/gradeawarrior/selenium-pagemodel/blob/master/RELEASE_NOTES.md) for the latest version available at this time_
 
 # Usage
 
