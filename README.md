@@ -54,3 +54,10 @@ _*NOTE:* Please take a look at the [RELEASE_NOTES.md](https://github.com/gradeaw
 # Usage
 
 TODO
+
+# Language Support
+
+The Selenium PageModel implementation is not limited to just one language. Here are other language implementations:
+
+* **Python** - Coming Soon!
+* **Ruby** - In consideration depending on needs and popularity.
