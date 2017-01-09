@@ -9,6 +9,15 @@
     <description>This project helps Test Engineers by abstracting out the implementation -- in this case Selenium -- from the actual set of Actions necessary to perform a single Test Scenario</description>
     <url>https://github.com/gradeawarrior/selenium-pagemodel</url>
 
+    <developers>
+        <developer>
+            <name>Peter Salas</name>
+            <email>selenium-pagemodel@googlegroups.com</email>
+            <organization>Github</organization>
+            <organizationUrl>https://github.com/gradeawarrior/selenium-pagemodel</organizationUrl>
+        </developer>
+    </developers>
+
     <distributionManagement>
         <snapshotRepository>
             <id>ossrh</id>
