@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.github.gradeawarrior</groupId>
     <artifactId>selenium-pagemodel</artifactId>
     <version>2.2-SNAPSHOT</version>
     <name>${project.groupId}:${project.artifactId}</name>
-    <description>This project helps Test Engineers by abstracting out the implementation -- in this case Selenium -- from the actual set of Actions necessary to perform a single Test Scenario</description>
+    <description>This project helps Test Engineers by abstracting out the implementation -- in this case Selenium --
+        from the actual set of Actions necessary to perform a single Test Scenario
+    </description>
     <url>https://github.com/gradeawarrior/selenium-pagemodel</url>
 
     <developers>
@@ -17,6 +20,13 @@
             <organizationUrl>https://github.com/gradeawarrior/selenium-pagemodel</organizationUrl>
         </developer>
     </developers>
+
+    <licenses>
+        <license>
+            <name>The Apache License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+        </license>
+    </licenses>
 
     <distributionManagement>
         <snapshotRepository>
@@ -33,8 +43,8 @@
         <url>https://github.com/gradeawarrior/selenium-pagemodel</url>
         <connection>scm:git:git://github.com/gradeawarrior/selenium-pagemodel.git</connection>
         <developerConnection>scm:git:git@github.com:gradeawarrior/selenium-pagemodel.git</developerConnection>
-      <tag>HEAD</tag>
-  </scm>
+        <tag>HEAD</tag>
+    </scm>
 
     <dependencies>
         <dependency>
