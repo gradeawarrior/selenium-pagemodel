@@ -4,7 +4,7 @@
 
     <groupId>com.github.gradeawarrior</groupId>
     <artifactId>selenium-pagemodel</artifactId>
-    <version>2.1</version>
+    <version>2.2-SNAPSHOT</version>
     <name>${project.groupId}:${project.artifactId}</name>
     <description>This project helps Test Engineers by abstracting out the implementation -- in this case Selenium -- from the actual set of Actions necessary to perform a single Test Scenario</description>
     <url>https://github.com/gradeawarrior/selenium-pagemodel</url>
@@ -33,7 +33,7 @@
         <url>https://github.com/gradeawarrior/selenium-pagemodel</url>
         <connection>scm:git:git://github.com/gradeawarrior/selenium-pagemodel.git</connection>
         <developerConnection>scm:git:git@github.com:gradeawarrior/selenium-pagemodel.git</developerConnection>
-      <tag>selenium-pagemodel-2.1</tag>
+      <tag>HEAD</tag>
   </scm>
 
     <dependencies>
