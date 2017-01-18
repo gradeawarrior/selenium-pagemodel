@@ -55,9 +55,13 @@ _*NOTE:* Please take a look at the [RELEASE_NOTES.md](https://github.com/gradeaw
 
 TODO
 
+# Dev Release Instructions
+
+Please see the [RELEASE_SELENIUMPM.md]([RELEASE_NOTES.md](https://github.com/gradeawarrior/selenium-pagemodel/blob/master/RELEASE_SELENIUMPM.md) documentation for the commands and steps necessary to publish a new build
+
 # Language Support
 
 The Selenium PageModel implementation is not limited to just one language. Here are other language implementations:
 
-* **Python** - Coming Soon!
+* **Python** - [python-seleniumpm](https://github.com/gradeawarrior/python-seleniumpm)
 * **Ruby** - In consideration depending on needs and popularity.
