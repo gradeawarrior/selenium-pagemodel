@@ -57,7 +57,7 @@ TODO
 
 # Dev Release Instructions
 
-Please see the [RELEASE_SELENIUMPM.md]([RELEASE_NOTES.md](https://github.com/gradeawarrior/selenium-pagemodel/blob/master/RELEASE_SELENIUMPM.md) documentation for the commands and steps necessary to publish a new build
+Please see the [RELEASE_SELENIUMPM.md](https://github.com/gradeawarrior/selenium-pagemodel/blob/master/RELEASE_SELENIUMPM.md) documentation for the commands and steps necessary to publish a new build
 
 # Language Support
 
