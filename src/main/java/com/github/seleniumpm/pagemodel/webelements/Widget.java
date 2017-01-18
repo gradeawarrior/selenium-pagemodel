@@ -19,6 +19,7 @@ package com.github.seleniumpm.pagemodel.webelements;
 import com.github.seleniumpm.Selenium;
 import org.apache.commons.lang.NotImplementedException;
 
+@Deprecated
 public class Widget extends Element {
 
     public Widget(Selenium sel, Object locator) {

@@ -18,6 +18,7 @@ package com.github.seleniumpm.pagemodel.webelements;
 
 import com.github.seleniumpm.Selenium;
 
+@Deprecated
 public class Link extends Element {
 
     public Link(Selenium sel, Object locator) {

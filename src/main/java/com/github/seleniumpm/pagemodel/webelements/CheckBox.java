@@ -18,6 +18,7 @@ package com.github.seleniumpm.pagemodel.webelements;
 
 import com.github.seleniumpm.Selenium;
 
+@Deprecated
 public class CheckBox extends Element{
 
     public CheckBox(Selenium sel, Object locator) {

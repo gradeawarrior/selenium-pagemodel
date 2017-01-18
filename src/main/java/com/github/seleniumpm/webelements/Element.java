@@ -14,59 +14,82 @@
  * limitations under the License.
  */
 
-package com.github.seleniumpm.pagemodel.webelements;
+package com.github.seleniumpm.webelements;
 
-import com.github.seleniumpm.Selenium;
-import org.openqa.selenium.ElementNotVisibleException;
-import org.openqa.selenium.IllegalLocatorException;
-import org.openqa.selenium.NotFoundException;
+import org.openqa.selenium.*;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
-@Deprecated
+import java.util.concurrent.TimeUnit;
+
 public class Element {
 
-    protected Selenium sel;
-    protected Object locator;
+    protected WebDriver driver;
+    protected By locator;
     protected int waitTime = 10000;
 
-    public Element(Selenium sel, Object locator) {
-        this.sel = sel;
+    public Element(WebDriver driver, By locator) {
+        this.driver = driver;
         this.locator = locator;
     }
 
-    public Object getLocator() {
+    public WebDriver getDriver() {
+        return driver;
+    }
+
+    public By getLocator() {
         return locator;
     }
 
     public boolean isVisible() {
-        return sel.isVisible(locator);
+        try {
+            // TODO - Apparently setting to 0 does not actually trigger a timeout immediately.
+            waitForVisible(0);
+            return true;
+        } catch (TimeoutException e) {
+            return false;
+        } catch (NotFoundException e) {
+            return false;
+        }
     }
 
     public boolean isDisplayed() {
-        return sel.isDisplayed(locator);
+        return driver.findElement(locator).isDisplayed();
     }
 
     public boolean isEnabled() {
-        return sel.isEnabled(locator);
+        return driver.findElement(locator).isEnabled();
     }
 
     public boolean isSelected() {
-        return sel.isSelected(locator);
+        return driver.findElement(locator).isSelected();
     }
 
-    public boolean isPresent() { return sel.isPresent(locator);}
+    public boolean isPresent() {
+        try {
+            // TODO - Apparently setting to 0 does not actually trigger a timeout immediately.
+            waitForPresent(0);
+            driver.findElement(locator);
+            return true;
+        } catch (TimeoutException e) {
+            return false;
+        } catch (NotFoundException e) {
+            return false;
+        }
+    }
 
     public boolean isPresentAndVisible() {
-        return sel.isPresent(locator) && sel.isVisible(locator);
+        return isPresent() && isVisible();
     }
 
     public Element present() throws NotFoundException {
-        if (!sel.isPresent(locator))
+        if (!isPresent())
             throw new NotFoundException("locator='" + locator + "' was not found!");
         return this;
     }
 
     public Element visible() throws ElementNotVisibleException {
-        if (!sel.isVisible(locator))
+        if (!isVisible())
             throw new ElementNotVisibleException("locator='" + locator + "' was not visible!");
         return this;
     }
@@ -89,26 +112,29 @@ public class Element {
     }
 
     public Element waitForPresent(long waitTime) {
-        sel.waitForPresent(locator, waitTime);
+        WebDriverWait wait = new WebDriverWait(driver, TimeUnit.MILLISECONDS.toSeconds(waitTime));
+        wait.until(ExpectedConditions.presenceOfElementLocated(locator));
         return this;
     }
 
-    public Element waitForVisible(int waitTime) {
-        sel.waitForVisible(locator, waitTime);
+    public Element waitForVisible(long waitTime) {
+        WebDriverWait wait = new WebDriverWait(driver, waitTime);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
         return this;
     }
 
     public Element waitForPresent() {
-        return waitForPresent(waitTime);
+        waitForPresent(waitTime);
+        return this;
     }
 
     public Element waitForVisible() {
-        return waitForVisible(waitTime);
+        waitForVisible(waitTime);
+        return this;
     }
 
     public Element waitForPresentAndVisible(long waitTime) {
-        sel.waitForPresentAndVisible(locator, waitTime);
-        return this;
+        return waitForPresent(waitTime).waitForVisible(waitTime);
     }
 
     public Element waitForPresentAndVisible() {

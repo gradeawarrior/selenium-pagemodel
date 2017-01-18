@@ -14,24 +14,23 @@
  * limitations under the License.
  */
 
-package com.github.seleniumpm.pagemodel.webelements;
+package com.github.seleniumpm.webelements;
 
-import com.github.seleniumpm.Selenium;
 import org.apache.commons.lang.NotImplementedException;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.Select;
 
-@Deprecated
 public class DropDown extends Element {
     protected Select select = null;
 
-    public DropDown(Selenium sel, Object locator) {
-        super(sel, locator);
+    public DropDown(WebDriver driver, By locator) {
+        super(driver, locator);
     }
 
     protected void instantiateSelect() {
         if (select == null) {
-            select = new Select((WebElement) sel.getElement(locator));
+            select = new Select(driver.findElement(locator));
         }
     }
 

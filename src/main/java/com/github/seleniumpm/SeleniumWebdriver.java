@@ -31,6 +31,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * Implementation of the Selenium interface using WebDriver
  */
+@Deprecated
 public class SeleniumWebdriver extends RemoteWebDriver implements Selenium {
     protected WebDriver driver;
     protected URI baseURI;

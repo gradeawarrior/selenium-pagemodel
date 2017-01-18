@@ -18,6 +18,7 @@ package com.github.seleniumpm.pagemodel.webelements;
 
 import com.github.seleniumpm.Selenium;
 
+@Deprecated
 public class Button extends Element {
 
     public Button(Selenium sel, Object locator) {

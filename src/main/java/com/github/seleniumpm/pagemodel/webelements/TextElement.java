@@ -18,6 +18,7 @@ package com.github.seleniumpm.pagemodel.webelements;
 
 import com.github.seleniumpm.Selenium;
 
+@Deprecated
 public class TextElement extends Element {
 
     public TextElement(Selenium sel, Object locator) {

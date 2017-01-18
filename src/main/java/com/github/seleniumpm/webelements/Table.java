@@ -14,23 +14,22 @@
  * limitations under the License.
  */
 
-package com.github.seleniumpm.pagemodel.webelements;
+package com.github.seleniumpm.webelements;
 
-import com.github.seleniumpm.Selenium;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import java.util.List;
 
-@Deprecated
 public class Table extends Element {
 
-    public Table(Selenium sel, Object locator) {
-        super(sel, locator);
+    public Table(WebDriver driver, By locator) {
+        super(driver, locator);
     }
 
     public List<WebElement> getRows() {
-        return sel.getElements(By.xpath("//tbody/tr"));
+        return driver.findElements(By.xpath("//tbody/tr"));
     }
 
     public int countRows() {

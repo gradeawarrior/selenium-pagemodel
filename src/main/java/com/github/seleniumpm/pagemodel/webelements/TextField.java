@@ -19,6 +19,7 @@ package com.github.seleniumpm.pagemodel.webelements;
 import com.github.seleniumpm.Selenium;
 import org.openqa.selenium.By;
 
+@Deprecated
 public class TextField extends Element {
 
     public TextField(Selenium sel, Object locator) {

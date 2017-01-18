@@ -28,6 +28,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * This is a very quick wrapper around the original DefaultSelenium implementation.
  */
+@Deprecated
 public class Selenium10 extends DefaultSelenium implements Selenium {
 
     protected long elementWaitTime = 10000;
