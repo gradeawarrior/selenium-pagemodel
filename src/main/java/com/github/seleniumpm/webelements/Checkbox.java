@@ -19,9 +19,9 @@ package com.github.seleniumpm.webelements;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class CheckBox extends Clickable {
+public class Checkbox extends Clickable {
 
-    public CheckBox(WebDriver driver, By locator) {
+    public Checkbox(WebDriver driver, By locator) {
         super(driver, locator);
     }
 }

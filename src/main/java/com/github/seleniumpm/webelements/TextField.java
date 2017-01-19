@@ -19,7 +19,7 @@ package com.github.seleniumpm.webelements;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class TextField extends Element {
+public class TextField extends TextElement {
 
     public TextField(WebDriver driver, By locator) {
         super(driver, locator);

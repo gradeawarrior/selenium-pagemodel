@@ -21,10 +21,10 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.Select;
 
-public class DropDown extends Element {
+public class Dropdown extends Element {
     protected Select select = null;
 
-    public DropDown(WebDriver driver, By locator) {
+    public Dropdown(WebDriver driver, By locator) {
         super(driver, locator);
     }
 
@@ -39,13 +39,13 @@ public class DropDown extends Element {
         throw new NotImplementedException();
     }
 
-    public DropDown selectByVisibleText(String txt) {
+    public Dropdown selectByVisibleText(String txt) {
         instantiateSelect();
         select.selectByVisibleText(txt);
         return this;
     }
 
-    public DropDown selectByIndex(int index) {
+    public Dropdown selectByIndex(int index) {
         instantiateSelect();
         select.selectByIndex(index);
         return this;

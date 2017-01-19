@@ -2,7 +2,7 @@ Release History
 ===============
 
 
-### 2.3 (2017-01-17)
+### 2.3-SNAPSHOT (UN-RELEASED)
 
 **New Features**
 
