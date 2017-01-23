@@ -21,9 +21,27 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public abstract class Widget extends Clickable {
+    protected long pageWaitTime = 30000;
+    protected long elementWaitTime = 10000;
 
     public Widget(WebDriver driver, By locator) {
         super(driver, locator);
+    }
+
+    public long getPageWaitTime() {
+        return pageWaitTime;
+    }
+
+    public void setPageWaitTime(long pageWaitTime) {
+        this.pageWaitTime = pageWaitTime;
+    }
+
+    public long getElementWaitTime() {
+        return elementWaitTime;
+    }
+
+    public void setElementWaitTime(long elementWaitTime) {
+        this.elementWaitTime = elementWaitTime;
     }
 
     public abstract void validate();

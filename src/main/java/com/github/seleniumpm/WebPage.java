@@ -43,6 +43,22 @@ public abstract class WebPage {
         this.server = server;
     }
 
+    public long getPageWaitTime() {
+        return pageWaitTime;
+    }
+
+    public void setPageWaitTime(long pageWaitTime) {
+        this.pageWaitTime = pageWaitTime;
+    }
+
+    public long getElementWaitTime() {
+        return elementWaitTime;
+    }
+
+    public void setElementWaitTime(long elementWaitTime) {
+        this.elementWaitTime = elementWaitTime;
+    }
+
     public void setPath(String path) {
         this.path = path;
     }
