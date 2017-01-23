@@ -16,10 +16,12 @@
 
 package com.github.seleniumpm;
 
+import com.google.common.base.Preconditions;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.net.ConnectException;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.concurrent.TimeUnit;
@@ -27,6 +29,7 @@ import java.util.concurrent.TimeUnit;
 public abstract class WebPage {
 
     protected WebDriver driver;
+    protected URI server = null;
     protected String path = "";
     protected long pageWaitTime = 30000;
     protected long elementWaitTime = 10000;
@@ -35,20 +38,18 @@ public abstract class WebPage {
         this.driver = driver;
     }
 
-    public WebPage(WebDriver driver, String path) {
+    public WebPage(WebDriver driver, URI server) {
         this.driver = driver;
+        this.server = server;
+    }
+
+    public void setPath(String path) {
         this.path = path;
     }
 
-    public void openRelative(String baseURL) throws URISyntaxException {
-        URI uri = new URI(baseURL);
-        String newURL = uri.getScheme() + "://" + uri.getHost() + ":" + uri.getPort() + path;
-        open(newURL);
-    }
-
-    public void open(String baseURL, String path) throws URISyntaxException {
-        URI uri = new URI(baseURL);
-        String newURL = uri.getScheme() + "://" + uri.getHost() + ":" + uri.getPort() + path;
+    public void open() {
+        Preconditions.checkNotNull(server, "server was not specified!");
+        String newURL = server.getScheme() + "://" + server.getHost() + ":" + server.getPort() + path;
         open(newURL);
     }
 
